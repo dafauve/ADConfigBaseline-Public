@@ -8,7 +8,6 @@
 
 
 try {
-Set-Location "c:\scripts"
 $AllVar = Import-Clixml .\Export_Var.xml
 $LogPath=$AllVar.LogPath
 $ScriptsPath=$Allvar.ScriptPath
@@ -44,17 +43,14 @@ Write-Output "Start sorting and duplicate cleanup"
 $Shares = $Shares | select @{Name='ComputerName';Expression={$_.PSComputerName}},Name,ScopeName,Description,Path
 
 
-$WrkDir = "C:\Scripts\"
-$LogPath  = $WrkDir + "logs\"
-
 $csvFile = "SMB_Shares_"
 $csvFile += get-date -Format "yyyy-MM-dd-HH\hmm"
 $csvFile += ".csv"
-$csvFile = $LogPath + $csvFile
 
 $LogFile = split-path $MyInvocation.MyCommand.Definition -Leaf
 $XMLFile = $LogPath + $LogFile.split('\.')[-2] + "_diff.xml"
 $LogFile = $LogPath + $LogFile.split('\.')[-2] + ".txt"
+$csvFile = $LogPath + $csvFile
 
 Export-Clixml -InputObject $Shares $XMLFile
 
