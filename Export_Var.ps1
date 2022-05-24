@@ -10,7 +10,7 @@ $SendEmail = "No"
 $smtpserver=""
 $SendToAddress=""
 $FromAddress=""
-$ConfigFileLst="Get-DomainController","Get-Share","ForestInfo","DomainInfo","LdapPolicy","ForestAdmins","DomainAdmins","SiteLink","SiteInfo","DefaultOU_DC","RegKeys","Config_IP","Time_Config","Uptime","NTDS_SYSVOL","PwdPolicy","WhiteSpace","Disk_Config","WMI_CS","WMI_PF","WMI_RAM","ADServices","ADTrusts"
+$ConfigFileLst="Get-DomainController","ForestInfo","AdminSDHolder","DomainInfo","LdapPolicy","ForestAdmins","DomainAdmins","SiteLink","SiteInfo","DefaultOU_DC","RegKeys","Config_IP","Time_Config","Uptime","NTDS_SYSVOL","PwdPolicy","Disk_Config","WMI_CS","WMI_PF","WMI_RAM","ADServices","ADTrusts","WMI_LogSize","SMB_Shares","KrbtgtMeta","DCCert"
 #$ConfigFileLst="WMI_CS","WMI_PF","WMI_RAM"
 #$ConfigFileLst="ADTrusts"
 ########################
