@@ -43,9 +43,7 @@ Write-Output "Start sorting and duplicate cleanup"
 $Shares = $Shares | select @{Name='ComputerName';Expression={$_.PSComputerName}},Name,ScopeName,Description,Path
 
 
-$csvFile = "SMB_Shares_"
-$csvFile += get-date -Format "yyyy-MM-dd-HH\hmm"
-$csvFile += ".csv"
+$csvFile = "SMB_Shares.csv"
 
 $LogFile = split-path $MyInvocation.MyCommand.Definition -Leaf
 $XMLFile = $LogPath + $LogFile.split('\.')[-2] + "_diff.xml"
